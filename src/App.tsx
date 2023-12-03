@@ -9,6 +9,7 @@ import { cateActions } from './store/cateSlice'
 import { useDispatch } from 'react-redux'
 import SignUp from './components/pages/auth/signup/SignUp'
 import SignIn from './components/pages/auth/signin/SignIn'
+import { isUserAllowed } from './lib/utils'
 import Bill from './components/pages/bill/Bill'
 import { useQuery} from '@tanstack/react-query'
 import { getProducts } from './instance/product'
@@ -24,7 +25,6 @@ import ListCart from './components/pages/admin/cart/ListCart'
 import { getAllUser } from './instance/auth'
 import { userActions } from './store/userSlice'
 import PrivateRoute from './components/PrivateRoute'
-import { isUserAllowed } from './lib/utils'
 
 
 
