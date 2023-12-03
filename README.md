@@ -28,3 +28,8 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Usage 
+- Git clone from https://github.com/envidi/Smart_Phone.git
+- After that write npm i in terminal
+- Then write npm run dev to run front-end and npm run server to run back-end
+- Hope you successfully
