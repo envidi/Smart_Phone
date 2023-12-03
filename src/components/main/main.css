@@ -1,0 +1,17 @@
+.container-main{
+    width: 100%;
+    padding: 20px 75px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    /*
+    .container-loading{ gap: px; */
+}
+.container-loading{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+   
+}

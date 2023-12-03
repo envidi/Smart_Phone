@@ -1,0 +1,297 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 14 pro max",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+      "price": 1599,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Iphone 15 ",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+      "price": 1699,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Iphone 15 plus ",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg",
+      "price": 1299,
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Galaxy A05s",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/317530/samsung-galaxy-a05s-sliver-thumb-600x600.jpeg",
+      "price": 899,
+      "category_id": 2
+    },
+    {
+      "id": 5,
+      "name": "xiao mi2",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/314203/vivo-v29e-black-thumb-600x600.jpg",
+      "price": 599,
+      "category_id": 3
+    },
+    {
+      "id": 6,
+      "name": "Vivo V29e",
+      "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/314203/vivo-v29e-black-thumb-600x600.jpg",
+      "price": 599,
+      "category_id": 3
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Iphone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "Vivo"
+    },
+    {
+      "name": "oppo",
+      "id": 4
+    }
+  ],
+  "carts": [
+    {
+      "id_user": 1,
+      "totalCost": 3298,
+      "carts": [
+        {
+          "name": "Iphone 14 pro max",
+          "price": 1599,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 7877,
+          "id_product": 1,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1599
+        },
+        {
+          "name": "Iphone 15 ",
+          "price": 1699,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 552,
+          "id_product": 2,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1699
+        }
+      ],
+      "date": "2023-12-03T04:35:45.591Z",
+      "cartStatus": "Completed",
+      "id": 5
+    },
+    {
+      "id_user": 1,
+      "totalCost": 4597,
+      "carts": [
+        {
+          "name": "Iphone 14 pro max",
+          "price": 1599,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 712,
+          "id_product": 1,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1599
+        },
+        {
+          "name": "Iphone 15 ",
+          "price": 1699,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 7134,
+          "id_product": 2,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1699
+        },
+        {
+          "name": "Iphone 15 plus ",
+          "price": 1299,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 5078,
+          "id_product": 3,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1299
+        }
+      ],
+      "date": "2023-12-03T04:46:31.120Z",
+      "cartStatus": "Completed",
+      "id": 6
+    },
+    {
+      "id_user": 1,
+      "totalCost": 4597,
+      "carts": [
+        {
+          "name": "Iphone 14 pro max",
+          "price": 1599,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 3257,
+          "id_product": 1,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1599
+        },
+        {
+          "name": "Iphone 15 ",
+          "price": 1699,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 827,
+          "id_product": 2,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1699
+        },
+        {
+          "name": "Iphone 15 plus ",
+          "price": 1299,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 6333,
+          "id_product": 3,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1299
+        }
+      ],
+      "date": "2023-12-03T05:22:51.667Z",
+      "cartStatus": "Cancelled",
+      "id": 7
+    },
+    {
+      "id_user": 1,
+      "totalCost": 4597,
+      "carts": [
+        {
+          "name": "Iphone 14 pro max",
+          "price": 1599,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 4450,
+          "id_product": 1,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1599
+        },
+        {
+          "name": "Iphone 15 ",
+          "price": 1699,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 6458,
+          "id_product": 2,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1699
+        },
+        {
+          "name": "Iphone 15 plus ",
+          "price": 1299,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 8805,
+          "id_product": 3,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1299
+        }
+      ],
+      "date": "2023-12-03T05:34:48.161Z",
+      "cartStatus": "Cancelled",
+      "id": 8
+    },
+    {
+      "id_user": 1,
+      "totalCost": 3298,
+      "carts": [
+        {
+          "name": "Iphone 14 pro max",
+          "price": 1599,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 7183,
+          "id_product": 1,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1599
+        },
+        {
+          "name": "Iphone 15 ",
+          "price": 1699,
+          "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-128gb-xanh-thumb-600x600.jpg",
+          "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          "id": 8987,
+          "id_product": 2,
+          "quantity": 1,
+          "id_cate": 1,
+          "total": 1699
+        }
+      ],
+      "date": "2023-12-03T06:11:34.948Z",
+      "cartStatus": "Deleted",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "role": 1,
+      "email": "envidi123@gmail.com",
+      "password": "$2a$10$BMjtD9URilcA34ukXPEVROcbbwCo8knD5XA.nZ/vLqkCv37c1Pcw2",
+      "username": "envidi",
+      "id": 1
+    },
+    {
+      "email": "tienbt123@gmail.com",
+      "password": "$2a$10$ApjnbQHMaF3pP2VlfSVod.PLf3aUmYMK2QPrxcWbTaszk23UYFhwC",
+      "username": "dcdsc",
+      "role": 2,
+      "id": 2
+    },
+    {
+      "email": "tienbt1234@gmail.com",
+      "password": "$2a$10$jQMNKC7AfyFN5ZL6FhJMv.FSFSPIJvCa/./2JG/rrg.kc7ykordb.",
+      "username": "dcdsv",
+      "role": 2,
+      "id": 3
+    },
+    {
+      "email": "ducnvph24098@fpt.edu.vn",
+      "password": "$2a$10$yQ3qoK6dXcklRfNZYExyBeaTC9mykiJkaG29iQvFDaIzL6WEw4P0y",
+      "username": "tienbt8",
+      "role": 2,
+      "id": 4
+    },
+    {
+      "email": "ducnv123@gmail.com",
+      "password": "$2a$10$dJVo1mv3UOsChaY3EQQZq.kVBBSQyiO0Cd3jPbGk9YsVIV3Dua/06",
+      "username": "duc",
+      "role": 2,
+      "id": 5
+    }
+  ]
+}
