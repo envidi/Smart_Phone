@@ -1,4 +1,3 @@
-
 import {useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Main from './components/main/Main'
@@ -94,7 +93,7 @@ function App() {
         <PrivateRoute redirectPath='/' isAllowed={()=>isUserAllowed(userAuthen)}>
           <AdminLayout/>
         </PrivateRoute>
-      }>
+      }> 
         <Route index element={<List/>}/>
         <Route path='product/add' element={<Add/>}/>
         <Route path='category' element={<ListCategory/>}/>
