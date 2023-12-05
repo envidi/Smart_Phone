@@ -32,10 +32,10 @@ import ListCart from './components/pages/admin/cart/ListCart'
 function App() {
   const dispatch = useDispatch()
 
-  let userAuthen :any
-  if(localStorage.getItem('user')){
-     userAuthen = JSON.parse(localStorage.getItem('user')||'')
-  }
+  // let userAuthen :any
+  // if(localStorage.getItem('user')){
+  //    userAuthen = JSON.parse(localStorage.getItem('user')||'')
+  // }
   const { isLoading, error, data} = useQuery({
     queryKey: ['products'],
     queryFn : ()=>{
