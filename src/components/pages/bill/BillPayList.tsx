@@ -43,7 +43,6 @@ function BillPayList({billUser,index}:any) {
     })
 
     const hanldeDeleteCart = ({data,_id}:any)=>{
-      console.log(_id)
       mutation.mutate({data : {...data, cartStatus : DELETED},_id})
     }
   return (
@@ -52,7 +51,7 @@ function BillPayList({billUser,index}:any) {
     <div className="summary-cart w-[100%] h-[100%] ">
       <h3 className='summary'>Bill {index + 1}
       {
-        billUser.cartStatus !== COMPLETED ? 
+        billUser.cartStatus !== COMPLETED || billUser.cartStatus !== DELETED   ? 
         <AlertDialogTrigger asChild>
         { mutation.isPending ? <Loader/> : <X strokeWidth={1.75} />} 
       </AlertDialogTrigger> :

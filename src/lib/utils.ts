@@ -80,4 +80,6 @@ export const changeColorStatus = ( status:any)=>{
       return 'text-yellow-400'
   }
 }
+export const EMAIL_ADMIN = 'envidi123@gmail.com'
+export const PASSWORD_ADMIN = '12345678'
 

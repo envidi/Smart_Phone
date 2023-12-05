@@ -1,6 +1,7 @@
 import './signin.css'
 import '../icon.css'
-
+import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
 import { useForm } from "react-hook-form"
 import { joiResolver } from "@hookform/resolvers/joi"
 import Joi from 'joi'
@@ -21,9 +22,13 @@ import { Toaster } from '@/components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { userActions } from '@/store/userSlice'
+import { useEffect, useState } from 'react'
+import { EMAIL_ADMIN, PASSWORD_ADMIN } from '@/lib/utils'
+
 
 function SignIn() {
   const dispatch = useDispatch()
+  const [isClickCheckBox,setIsClickCheckBox] = useState<boolean>(false)
   const {toast} = useToast()
   const navigate = useNavigate()
   const mutation = useMutation({
@@ -57,16 +62,38 @@ function SignIn() {
 
   })
 
+  const handleAccountAdmin = ()=>{
+    setIsClickCheckBox(!isClickCheckBox)
+    
+  }
+ 
+
   const form = useForm<any>({
     resolver : joiResolver(schema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: isClickCheckBox ? EMAIL_ADMIN : '',
+      password: isClickCheckBox ? PASSWORD_ADMIN : '',
     },
   })
+
+  useEffect(() => {
+    if(isClickCheckBox){
+      form.reset({
+        email: EMAIL_ADMIN,
+        password : PASSWORD_ADMIN
+      })
+    }else{
+      form.reset({
+        email: '',
+        password : ''
+      })
+    }
+    
+  }, [isClickCheckBox])
   
 
   const onSubmit = (value:any)=>{
+    
     const {confirmPassword , ...other} = value
     const user = {...other}
     mutation.mutate(user)
@@ -83,7 +110,10 @@ function SignIn() {
       <FormField
         control={form.control}
         name="email"
-        render={({ field }) => (
+        render={({ field }) => {
+          field.value = isClickCheckBox ? EMAIL_ADMIN : field.value;
+          console.log(field)
+          return (
            <FormItem className="mt-2">
             {/* <FormLabel>Email</FormLabel> */}
             <FormControl>
@@ -96,13 +126,15 @@ function SignIn() {
             </FormDescription>
             <FormMessage />
           </FormItem>                    
-        )}
+        )}}
       />
 
     <FormField
         control={form.control}
         name="password"
-        render={({ field }) => (
+        render={({ field }) => {
+          field.value = isClickCheckBox ? PASSWORD_ADMIN : field.value;
+          return (
            <FormItem className="mt-2">
             {/* <FormLabel>Password</FormLabel> */}
             <FormControl>
@@ -115,9 +147,17 @@ function SignIn() {
             </FormDescription>
             <FormMessage />
           </FormItem>                    
-        )}
+        )}}
       />
-     
+       <div className="flex items-center space-x-2 mt-4">
+          <Checkbox id="terms" onCheckedChange={handleAccountAdmin} />
+          <Label
+            htmlFor="terms"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Account Admin
+          </Label>
+    </div>
       <Button className='mt-3 button-signup' variant="sign_up" type="submit">
         <span>Login</span>
       </Button>
