@@ -91,7 +91,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/> 
       </Route>
       <Route path='/admin' element={
-        <PrivateRoute redirectPath='/' isAllowed={()=>isUserAllowed(userAuthen)}>
+        <PrivateRoute redirectPath='/' isAllowed={()=>isUserAllowed()}>
           <AdminLayout/>
         </PrivateRoute>
       }> 
