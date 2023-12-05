@@ -54,6 +54,7 @@ export const uploadFile =async (files:any)=>{
 
 export const isUserAllowed = (user:any)=>{
   console.log('user is not allowed')
+  console.log(user ?? 'User is not defined')
   if(user.user.role === 1){
     console.log('user is allowed')
     return true
