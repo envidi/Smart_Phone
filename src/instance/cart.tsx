@@ -28,6 +28,7 @@ const editCart = async (cart:any,id:any)=>{
     return response.data              
 }
 const deleteCart = async (value:any,id :any)=>{
+    console.log(id)
     
     const response = await instance.patch(`carts/delete/${id}`,value)       
     return response.data              

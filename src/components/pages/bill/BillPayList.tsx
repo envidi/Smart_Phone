@@ -23,7 +23,7 @@ function BillPayList({billUser,index}:any) {
   const { toast } = useToast()
   const queryClient = useQueryClient()
     const mutation = useMutation({
-      mutationFn : (value:any)=>deleteCart(value.data,value.id),
+      mutationFn : (value:any)=>deleteCart(value.data,value._id),
       onSuccess : ()=>{
         toast({
           variant:"success",
@@ -42,8 +42,9 @@ function BillPayList({billUser,index}:any) {
       
     })
 
-    const hanldeDeleteCart = ({data,id}:any)=>{
-      mutation.mutate({data : {...data, cartStatus : DELETED},id})
+    const hanldeDeleteCart = ({data,_id}:any)=>{
+      console.log(_id)
+      mutation.mutate({data : {...data, cartStatus : DELETED},_id})
     }
   return (
     <div className="wrapper-cart">

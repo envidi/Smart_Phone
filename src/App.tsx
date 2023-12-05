@@ -32,10 +32,7 @@ import PrivateRoute from './components/PrivateRoute'
 function App() {
   const dispatch = useDispatch()
 
-  // let userAuthen :any
-  // if(localStorage.getItem('user')){
-  //    userAuthen = JSON.parse(localStorage.getItem('user')||'')
-  // }
+ 
   const { isLoading, error, data} = useQuery({
     queryKey: ['products'],
     queryFn : ()=>{
