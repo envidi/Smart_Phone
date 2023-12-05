@@ -6,7 +6,6 @@ const getCarts = async ()=>{
 }
 const getCartsByStatus = async ()=>{
     const response = await instance.get(`carts/status`)
-    console.log(response)
     return response.data.docs
 
 }
