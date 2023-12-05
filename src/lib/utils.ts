@@ -62,21 +62,20 @@ export const isUserAllowed = (user:any)=>{
 }
 
 export const changeColorStatus = ( status:any)=>{
-  let classColor = ''
   switch (status) {
     case PENDING:
-      return classColor = 'text-yellow-400'
+      return 'text-yellow-400'
     case PROCESS:
-      return classColor = 'text-orange-400'
+      return 'text-orange-400'
     case COMPLETED:
-      return classColor = 'text-green-400'
+      return 'text-green-400'
     case CANCELLED:
-      return classColor = 'text-red-400'   
+      return 'text-red-400'   
     case DELETED:
-      return classColor = 'text-purple-500'     
+      return 'text-purple-500'     
                 
     default:
-      return classColor = 'text-yellow-400'
+      return 'text-yellow-400'
   }
 }
 
