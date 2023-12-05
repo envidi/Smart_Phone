@@ -4,7 +4,7 @@ import instance from "./instance";
 const getProducts = async ()=>{
     
         const response = await instance.get('products')
-        return response.data
+        return response.data.docs
     
 }
 const getProduct = async (id :any)=>{

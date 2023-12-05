@@ -15,16 +15,16 @@ const cart = createSlice({
     initialState:cartInitialState,
     reducers : {
         increase(state:any,action:any){
-            const isExistingCart = state.carts.find((cart:any)=>{
-                return cart.id_product === action.payload.id_product
+            const isExistingCart = state.carts.find((cart:any)=>{               
+                return cart.id_product == action.payload.id_product
             })
             if(isExistingCart) {
                 state.carts = state.carts.map((cart:any)=>{
                     if(cart.id_product === action.payload.id_product) {
                         return {
                             ...cart,
-                            quantity : cart.quantity + 1,
-                            total : (cart.quantity + 1) * cart.price
+                            quantity : cart.quantity + action.payload.quantity,
+                            total : (cart.quantity + action.payload.quantity) * cart.price
                         }
                     }
                     return cart

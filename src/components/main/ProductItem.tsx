@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 function ProductItem({
     name , price , image , desc, id,id_cate
 } :any) {
-
   const { toast } = useToast()
   const dispatch = useDispatch()
 
@@ -27,7 +26,7 @@ function ProductItem({
 
   return (
     <>
-    <Card >
+    <Card key={id}>
       <Card.Img className='mt-2' variant="top" src={image} />
       <Card.Body>
         <Card.Title>

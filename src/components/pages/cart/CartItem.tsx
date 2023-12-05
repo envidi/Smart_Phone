@@ -24,6 +24,7 @@ import {
 function CartItem({cart}:any) {
     const dispatch = useDispatch()
     const categories = useSelector((state:any)=>state.category.categories)
+    
     const handleIncrease = (cart:any) =>{
         dispatch(cartAction.increase(cart))
       }
@@ -31,7 +32,8 @@ function CartItem({cart}:any) {
         dispatch(cartAction.decrease(cart))
       }
       const name_category = categories.find((cate:any)=>{
-        return cate.id === cart.id_cate
+        console.log(cate._id)
+        return cate._id === cart.id_cate
       })
       
   return (
@@ -45,7 +47,7 @@ function CartItem({cart}:any) {
                 </div>
                 <div className="name-cart-item d-flex flex-col items-start">
                 <span>{cart.name}</span>
-                <Button size="category" variant="outline" className='mt-3'>{name_category.name} </Button>
+                <Button size="category" variant="outline" className='mt-3'>{name_category?.name} </Button>
                 </div>
             </div>
             </TableCell>

@@ -37,7 +37,7 @@ function EditUser({payment}:any) {
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const mutation = useMutation({
-    mutationFn:(value:any)=> editUser(payment.id,value as any),
+    mutationFn:(value:any)=> editUser(payment._id,value as any),
     onSuccess:()=>{
       toast({
         variant: "success",

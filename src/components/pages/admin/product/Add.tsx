@@ -74,10 +74,10 @@ function Add() {
       const categoryId = allCategory.find((cate:any)=>{
         return cate.name === value.category_id
       })
-      mutation.mutate({...value,image : imageFile,category_id: categoryId.id} as any)
+      mutation.mutate({...value,image : imageFile,category_id: categoryId._id} as any)
     }
     const selectCategory = allCategory && allCategory.length > 0 ? allCategory.map((category:any)=>{
-      return <SelectItem className="text-black" key={category.id} value={category.name}>{category.name}</SelectItem>      
+      return <SelectItem className="text-black" key={category._id} value={category.name}>{category.name}</SelectItem>      
     }) : ''
   return (
     <div className="d-flex items-center flex-col bg-white mt-3">

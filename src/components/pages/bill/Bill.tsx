@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
 function Bill() {    
   const [userState , setUserState ] = useState<any>()
   const userData = useSelector((state:any)=>state.user.user)
-  const { isPending, isError, data:datas, error } = useQuery({ queryKey: ['carts'], queryFn: getCartsByStatus })
+  const { isPending, isError, data:datas = [], error } = useQuery({ queryKey: ['carts'], queryFn: getCartsByStatus })
   useEffect(()=>{
     if(localStorage.getItem('user')){
       setUserState( JSON.parse(localStorage.getItem('user')||''))
@@ -18,13 +18,14 @@ function Bill() {
       setUserState(null)
     }
   },[userData,datas])
+  console.log(datas)
  
 
   
 
   const billUser = datas?.filter((data:any)=>{
     
-    return data.id_user === userState?.user?.id 
+    return data.id_user === userState?.user?._id 
   })
  
   if(isPending){
@@ -46,7 +47,7 @@ function Bill() {
         {
           billUser&&billUser.length>0 ? billUser?.map((bill:any,index:any)=>{
             return <BillPayList 
-                    key={bill.id} 
+                    key={bill._id} 
                     index={index}
                     billUser={bill}/>
           }) : <div className='text-lg w-[400px]'>No bill for you or login to checkout</div>

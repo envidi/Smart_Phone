@@ -118,11 +118,7 @@ function AdminLayout() {
                       List
                     </Link>
                     </li>
-                    <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                      <Link to='/admin/cart/add' className="text-base">
-                        Add
-                      </Link>
-                    </li>
+                   
                   </ul>
                 
                 

@@ -2,32 +2,32 @@ import instance from "./instance";
 
 const getCategories = async ()=>{
     try {
-        const response = await instance.get('category')
-        return response.data
+        const response = await instance.get('categories')
+        return response.data.docs
     } catch (error) {
         console.log(error)
     }
 }
 const getCategory = async (id :any)=>{
     try {
-        const response = await instance.get(`category/${id}`)
+        const response = await instance.get(`categories/${id}`)
         return response.data
     } catch (error) {
         console.log(error)
     }
 }
 const addCategory = async (value :any)=>{
-    const response = await instance.post(`category`,value)
+    const response = await instance.post(`categories`,value)
     return response.data
 
 }
 const editCategory = async (id :any,value:any)=>{
             
-            const response = await instance.patch(`category/${id}`,value)
+            const response = await instance.patch(`categories/${id}`,value)
             return response.data
 }
 const deleteCategory = async (id :any)=>{
-    const response = await instance.delete(`category/${id}`,)
+    const response = await instance.delete(`categories/${id}`,)
     return response.data
 
 }

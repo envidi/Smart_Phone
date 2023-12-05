@@ -9,18 +9,18 @@ const getOneUser = async (id:any)=>{
 const getAllUser = async ()=>{
     
     const response = await instance.get(`users`)
-    return response.data
+    return response.data.docs
 
 }
 
 const addUser = async (user:any)=>{
 
-        const response = await instance.post(`users`,user)    
+        const response = await instance.post(`users/signup`,user)    
         return response.data   
 }
 const signIn = async (user:any)=>{
 
-    const response = await instance.post(`signin`,user) 
+    const response = await instance.post(`users/signin`,user) 
     return response.data   
 }
 const deleteUser = async (id:any)=>{

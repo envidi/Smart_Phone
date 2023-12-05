@@ -46,10 +46,10 @@ export type Payment = {
 
 export const columnsProduct =( onRemove:any) => [
     {
-      accessorKey: "id",
+      accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("id")}</div>
+        <div className="capitalize">{row.getValue("_id")}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -122,7 +122,7 @@ export const columnsProduct =( onRemove:any) => [
         // const desc = parseFloat(row.getValue("desc"))
         const allCategory = useSelector((state:any)=>state.category.categories)
         const nameCategory = allCategory.find((item:any)=>{
-          return item.id == row.getValue("category_id")
+          return item._id == row.getValue("category_id")
         })
         
         // Format the amount as a dollar amount
@@ -155,7 +155,7 @@ export const columnsProduct =( onRemove:any) => [
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment.id)}>Continue</AlertDialogAction>
+              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment._id)}>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
             <DropdownMenuTrigger asChild>
@@ -190,10 +190,10 @@ export const columnsProduct =( onRemove:any) => [
   ]
   export const columnsCarts =( onRemove:any) => [
     {
-      accessorKey: "id",
+      accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("id")}</div>
+        <div className="capitalize">{row.getValue("_id")}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -226,7 +226,7 @@ export const columnsProduct =( onRemove:any) => [
         },
     },
     {
-      accessorKey: "date",
+      accessorKey: "createdAt",
       header: ({ column }:any) => {
         
         return (
@@ -240,7 +240,7 @@ export const columnsProduct =( onRemove:any) => [
           </Button>
         )
       },
-      cell: ({ row }:any) => <div className="lowercase">{dateTimeFormat( new Date(row.getValue("date")))}</div>,
+      cell: ({ row }:any) => <div className="lowercase">{dateTimeFormat( new Date(row.getValue("createdAt")))}</div>,
     },
     {
       accessorKey: "cartStatus",
@@ -296,7 +296,7 @@ export const columnsProduct =( onRemove:any) => [
         // const desc = parseFloat(row.getValue("desc"))
         const allUser = useSelector((state:any)=>state.user.users)
         const nameUser = allUser.find((item:any)=>{
-          return item.id === row.getValue("id_user")
+          return item._id === row.getValue("id_user")
         })
         
    
@@ -361,10 +361,10 @@ export const columnsProduct =( onRemove:any) => [
 
   export const columnsUser =( onRemove:any) => [
     {
-      accessorKey: "id",
+      accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("id")}</div>
+        <div className="capitalize">{row.getValue("_id")}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -429,7 +429,7 @@ export const columnsProduct =( onRemove:any) => [
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment.id)}>Continue</AlertDialogAction>
+              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment._id)}>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
             <DropdownMenuTrigger asChild>
@@ -464,10 +464,10 @@ export const columnsProduct =( onRemove:any) => [
   ]
   export const columnsCategory =( onRemove:any) => [
     {
-      accessorKey: "id",
+      accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("id")}</div>
+        <div className="capitalize">{row.getValue("_id")}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -514,7 +514,7 @@ export const columnsProduct =( onRemove:any) => [
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment.id)}>Continue</AlertDialogAction>
+              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment._id)}>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
             <DropdownMenuTrigger asChild>

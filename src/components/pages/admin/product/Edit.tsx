@@ -36,12 +36,12 @@ const formSchema = Joi.object({
 })
 function Edit({payment}:any) {
   const allCategory = useSelector((state:any)=>state.category.categories)
-  const categoryId = allCategory.find((cate:any)=>cate.id === payment.category_id)
+  const categoryId = allCategory.find((cate:any)=>cate._id === payment.category_id)
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const imageRef = useRef<any>()
   const mutation = useMutation({
-    mutationFn:(value:any)=> editProduct(payment.id,value as any),
+    mutationFn:(value:any)=> editProduct(payment._id,value as any),
     onSuccess:()=>{
       toast({
         variant: "success",
@@ -75,11 +75,11 @@ function Edit({payment}:any) {
       const categoryId = allCategory.find((cate:any)=>{
         return cate.name === value.category_id
       })
-    
-      mutation.mutate({...value,image: imageFile,category_id: categoryId.id} as any)
+      console.log(categoryId)
+      mutation.mutate({...value,image: imageFile,category_id: categoryId._id} as any)
     }
     const selectCategory = allCategory && allCategory.length > 0 ? allCategory.map((category:any)=>{
-      return <SelectItem className="text-black" key={category.id} value={category.name}>{category.name}</SelectItem>      
+      return <SelectItem className="text-black" key={category._id} value={category.name}>{category.name}</SelectItem>      
     }) : ''
   return (
     <>

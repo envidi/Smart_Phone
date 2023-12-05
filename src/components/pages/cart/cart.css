@@ -49,3 +49,13 @@
 .checkout:hover{
     background-color:  rgb(159, 158, 158) !important;
 }
+@media screen and (min-width : 400px) {
+    .calc-height {
+        height: 100%;
+    }
+}
+@media screen and (min-width : 1024px) {
+    .calc-height {
+        height: calc(100vh - 129px) !important;
+    }
+}

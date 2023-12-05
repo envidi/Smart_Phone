@@ -36,7 +36,7 @@ function EditCart({payment}:any) {
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const mutation = useMutation({
-    mutationFn:(value:any)=> editCart(value as any,payment.id),
+    mutationFn:(value:any)=> editCart(value as any,payment._id),
     onSuccess:()=>{
       toast({
         variant: "success",

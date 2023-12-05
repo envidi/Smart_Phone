@@ -45,7 +45,6 @@ function BillPayList({billUser,index}:any) {
     const hanldeDeleteCart = ({data,id}:any)=>{
       mutation.mutate({data : {...data, cartStatus : DELETED},id})
     }
-    console.log(billUser)
   return (
     <div className="wrapper-cart">
    <AlertDialog>
@@ -64,7 +63,7 @@ function BillPayList({billUser,index}:any) {
         <li>
           <div className='d-flex item-bill justify-between'>
             <span className='item-bill-name'>Date </span>
-            <span className='item-bill-date'>{dateTimeFormat(new Date(billUser.date))}</span>
+            <span className='item-bill-date'>{dateTimeFormat(new Date(billUser.createdAt))}</span>
           </div>
         </li>
         {
@@ -99,7 +98,7 @@ function BillPayList({billUser,index}:any) {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction className='bg-red-500 text-white mt-2' onClick={()=>hanldeDeleteCart({data : billUser,id:billUser.id})}>Delete</AlertDialogAction>
+          <AlertDialogAction className='bg-red-500 text-white mt-2' onClick={()=>hanldeDeleteCart({data : billUser,_id:billUser._id})}>Delete</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

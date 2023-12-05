@@ -16,9 +16,8 @@ function ProductDetail() {
     queryKey: ['product',param.id],
     queryFn: ()=> getProduct(param.id),
   })
-     
   const relatedProduct = dataProduct.filter((item:any)=>{
-    return item.category_id === data?.category_id && item.id !== data?.id
+    return item.category_id === data?.data?.category_id && item._id !== data?._id
   })
  
   
@@ -55,7 +54,7 @@ function ProductDetail() {
                 {
                     relatedProduct?.map((item:any)=>{
                         return <ProductItem 
-                        key={item.id}
+                        key={item._id}
                         name={item.name} 
                         image={item.image} 
                         price={item.price} 

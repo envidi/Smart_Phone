@@ -1,13 +1,13 @@
-import { CANCELLED } from "@/store/cartSlice";
 import instance from "./instance";
 const getCarts = async ()=>{
         const response = await instance.get('carts')
-        return response.data
+        return response.data.docs
    
 }
 const getCartsByStatus = async ()=>{
-    const response = await instance.get(`carts?cartStatus_ne=${CANCELLED}`)
-    return response.data
+    const response = await instance.get(`carts/status`)
+    console.log(response)
+    return response.data.docs
 
 }
 const getProduct = async (id :any)=>{
@@ -30,7 +30,7 @@ const editCart = async (cart:any,id:any)=>{
 }
 const deleteCart = async (value:any,id :any)=>{
     
-    const response = await instance.patch(`carts/${id}`,value)       
+    const response = await instance.patch(`carts/delete/${id}`,value)       
     return response.data              
 }
 

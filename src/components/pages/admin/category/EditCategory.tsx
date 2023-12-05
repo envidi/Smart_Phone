@@ -27,7 +27,7 @@ function EditCategory({payment}:any) {
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const mutation = useMutation({
-    mutationFn:(value:any)=> editCategory(payment.id,value as any),
+    mutationFn:(value:any)=> editCategory(payment._id,value as any),
     onSuccess:()=>{
       toast({
         variant: "success",

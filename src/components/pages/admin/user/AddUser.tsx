@@ -44,7 +44,7 @@ function AddUser() {
         title: "Success",
         description: "Add user successfully !",
       })
-      queryClient.invalidateQueries({ queryKey : ['products']})
+      queryClient.invalidateQueries({ queryKey : ['user']})
       form.reset()
     },onError : (error)=>{
       toast({
@@ -61,7 +61,7 @@ function AddUser() {
         username: "",
         email: '',
         password: "",
-        role: allRole[1].id,
+        role: '',
        
       },
     })
@@ -128,11 +128,11 @@ function AddUser() {
           return (
             <FormItem className="mt-3">
               
-              <FormLabel>Category</FormLabel>
+              <FormLabel>Role</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                   <SelectTrigger className="w-[300px]">
-                    <SelectValue placeholder={allRole[1]?.name } />
+                    <SelectValue placeholder={allRole[1]?.name} />
                   </SelectTrigger>
               </FormControl>           
                   <SelectContent >                

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { useDispatch } from 'react-redux';
 import { productAction } from '@/store/index.tsx';
 import { useEffect } from 'react';
+import CarouselComponent from '../Carousel/Carousel';
 
 function Main( { isLoading, error, data}:any) {
     const dispatch = useDispatch()
@@ -31,22 +32,26 @@ function Main( { isLoading, error, data}:any) {
         )
     }
   return (
-    <div className='container-main'>
+    <>
+     <CarouselComponent/>
+   
+    <div className='container-main sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2'>
+       
         {
             data?.map((item:any)=>{
-                return <ProductItem 
-                key={item.id}
+                return <ProductItem key={item._id}
                 name={item.name} 
                 image={item.image} 
                 price={item.price} 
                 desc={item.desc} 
                 id_cate={item.category_id}
-                id={item.id}/>
+                id={item._id}/>
             })
         }
             <Toaster  />
        
     </div>
+    </>
   )
 }
 

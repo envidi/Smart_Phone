@@ -22,7 +22,7 @@ function Cart() {
   const dispatch = useDispatch()
   const carts = useSelector((state:any)=>state.cart.carts)
   let userAuthen = { user : {
-    id : null
+    _id : null
   }}
   if(localStorage.getItem('user')){
      userAuthen = JSON.parse(localStorage.getItem('user')||'')
@@ -51,16 +51,16 @@ function Cart() {
   })
 
   const handleCheckout =async ()=>{
-    mutation.mutate({ id_user : userAuthen?.user?.id,totalCost, carts, date : new Date(), cartStatus : PENDING} as any)  
+    mutation.mutate({ id_user : userAuthen?.user?._id,totalCost, carts, cartStatus : PENDING} as any)  
                  
   }
   const totalCost = carts.reduce((accumulator:any,cart:any)=>{
     return cart.total + accumulator
   },0)
   return (
-    <div className={`container-cart ${carts && carts.length > 1 ? "" : "calc-height"}`}>
+    <div className={`container-cart ${carts && carts.length > 1 ? "" : "calc-height"} sm:h-full `}>
         <h2 className='text-2xl'>Your Cart</h2>
-        <div className="wrapper-cart">
+        <div className="wrapper-cart lg:d-flex lg:flex-row sm:flex-col sm:gap-5">
           <div className="list-cart">
             <Table className='w-[800px]'>
               <TableCaption className={`mb-2 ms-3 ${carts && carts.length > 0  ? '' : 'text-2xl'}`}>{
