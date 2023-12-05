@@ -28,12 +28,16 @@ const editCart = async (cart:any,id:any)=>{
     return response.data              
 }
 const deleteCart = async (value:any,id :any)=>{
-    console.log(id)
     
     const response = await instance.patch(`carts/delete/${id}`,value)       
     return response.data              
 }
+const deleteCartHard = async (id :any)=>{
+    
+    const response = await instance.delete(`carts/${id}`)       
+    return response.data              
+}
 
 export {
-    getProduct,getCarts,addCart,deleteCart,getCartsByStatus,editCart
+    getProduct,getCarts,addCart,deleteCart,getCartsByStatus,editCart,deleteCartHard
 }

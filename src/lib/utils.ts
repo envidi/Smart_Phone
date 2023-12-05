@@ -54,12 +54,8 @@ export const uploadFile =async (files:any)=>{
 }
 
 export const isUserAllowed = ()=>{
-  console.log('user is not allowed')
   const userAuthen = useReadLocalStorage<any>('user')
-  // let userAuthen = JSON.parse(localStorage.getItem('user')!)
-  console.log(userAuthen ?? 'User is not defined')
   if(userAuthen?.user?.role === 1){
-    console.log('user is allowed')
     return true
   }
   // const userRoles = Array.isArray(roles)? roles : [roles]

@@ -16,14 +16,14 @@ import { getCarts } from "@/instance/cart";
       toast({
         variant: "success",
         title: "Success",
-        description: "Delete product successfully !",
+        description: "Delete cart successfully !",
       })
     },
     onError : ()=>{
       toast({
         variant: "error",
         title: "Error",
-        description: "Delete product failed !",
+        description: "Delete cart failed !",
       })
     },action:'carts'
   }  )

@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { deleteProduct } from '@/instance/product' 
 import { deleteCategory } from "@/instance/category"
 import { deleteUser } from "@/instance/auth"
+import { deleteCartHard } from "@/instance/cart"
 
 
 function useMutationCustom({onSuccess,onError,action}:any) {
@@ -15,6 +16,8 @@ function useMutationCustom({onSuccess,onError,action}:any) {
               return  deleteCategory(id)
             case 'user':
                 return  deleteUser(id)
+            case 'carts':
+                return  deleteCartHard(id)
             default:
               return deleteProduct(id)
           }

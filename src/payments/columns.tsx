@@ -247,15 +247,7 @@ export const columnsProduct =( onRemove:any) => [
       header: ({ column }:any) => {
         const allStatus = useSelector((state:any)=>state.cart.statusCart)
 
-        return (
-          // <Button
-          //   variant="ghost"
-          //   onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          //   className=""
-          // >
-          //   Status
-          //   <ArrowUpDown className="ml-2 h-4 w-4" />
-          // </Button>
+        return (       
               <DropdownMenu>
               <DropdownMenuTrigger >
                 <div className="d-flex">
@@ -263,8 +255,7 @@ export const columnsProduct =( onRemove:any) => [
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                {/* <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator /> */}
+                
                 <DropdownMenuItem onClick={() => column.setFilterValue('')}>
                               All
                 </DropdownMenuItem>
@@ -324,7 +315,7 @@ export const columnsProduct =( onRemove:any) => [
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment.id)}>Continue</AlertDialogAction>
+              <AlertDialogAction className="bg-red-500 py-3 mt-2 text-white"  onClick={()=>onRemove(payment._id)}>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
             <DropdownMenuTrigger asChild>
