@@ -2,7 +2,6 @@ import { CANCELLED, COMPLETED, DELETED, PENDING, PROCESS } from "@/store/cartSli
 import axios from "axios";
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useReadLocalStorage } from "@/hooks/useReadLocalStorage";
  
 export function cn(...inputs: ClassValue[]) {

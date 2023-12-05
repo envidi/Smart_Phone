@@ -54,7 +54,7 @@ function NavBarLeft({carts}:any) {
         userAuthen ? <>
          <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="default">User</Button>
+                <Button variant="default">{userAuthen.user.username}</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

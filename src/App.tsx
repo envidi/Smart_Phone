@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import { getCategories } from './instance/category'
 import { cateActions } from './store/cateSlice'
 import { useDispatch } from 'react-redux'
-import { isUserAllowed } from './lib/utils'
+// import { isUserAllowed } from './lib/utils'
 import { useQuery} from '@tanstack/react-query'
 import { getProducts } from './instance/product'
 import { productAction } from './store'
@@ -25,7 +25,7 @@ import AddCategory from './components/pages/admin/category/AddCategory'
 import ListUser from './components/pages/admin/user/ListUser'
 import AddUser from './components/pages/admin/user/AddUser'
 import ListCart from './components/pages/admin/cart/ListCart'
-import PrivateRoute from './components/PrivateRoute'
+// import PrivateRoute from './components/PrivateRoute'
 
 
 
@@ -91,9 +91,9 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/> 
       </Route>
       <Route path='/admin' element={
-        <PrivateRoute redirectPath='/' isAllowed={()=>isUserAllowed()}>
+        // <PrivateRoute redirectPath='/' isAllowed={()=>isUserAllowed()}>
           <AdminLayout/>
-        </PrivateRoute>
+        // </PrivateRoute>
       }> 
         <Route index element={<List/>}/>
         <Route path='product/add' element={<Add/>}/>

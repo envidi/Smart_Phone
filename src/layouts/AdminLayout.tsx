@@ -30,7 +30,9 @@ function AdminLayout() {
           </SheetTrigger>
           <SheetContent side='left' className="bg-sideBar text-colorSidebar w-[300px]">
             <SheetHeader>
-              <SheetTitle className="text-white mb-2">Smart World </SheetTitle>
+              <SheetTitle className="text-white mb-2">
+                <Link to='/'>Smart World</Link>
+              </SheetTitle>
               {/* <SheetDescription>
                 Make changes to your profile here. Click save when you're done.
               </SheetDescription> */}
