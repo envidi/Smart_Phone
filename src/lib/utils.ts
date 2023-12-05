@@ -2,6 +2,8 @@ import { CANCELLED, COMPLETED, DELETED, PENDING, PROCESS } from "@/store/cartSli
 import axios from "axios";
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useReadLocalStorage } from "@/hooks/useReadLocalStorage";
  
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -54,10 +56,10 @@ export const uploadFile =async (files:any)=>{
 
 export const isUserAllowed = ()=>{
   console.log('user is not allowed')
-  
-  let userAuthen = JSON.parse(localStorage.getItem('user')!)
+  const userAuthen = useReadLocalStorage<any>('user')
+  // let userAuthen = JSON.parse(localStorage.getItem('user')!)
   console.log(userAuthen ?? 'User is not defined')
-  if(userAuthen.user.role === 1){
+  if(userAuthen?.user?.role === 1){
     console.log('user is allowed')
     return true
   }
