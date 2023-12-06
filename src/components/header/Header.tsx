@@ -15,9 +15,9 @@ function Header() {
       <Navbar.Brand href="#home">Envidi Shop</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
+        <Nav className="me-auto d-flex gap-3">
           <Link className="text-white text-xl " to="/">Home</Link>
-          <Link className="text-white text-xl ms-3" to="/product">Product</Link>
+          <Link className="text-white text-xl" to="/product">Product</Link>
         
         </Nav>
         <Navbar.Text className='d-flex gap-2.5'>

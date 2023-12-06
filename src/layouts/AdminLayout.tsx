@@ -47,12 +47,12 @@ function AdminLayout() {
                 <AccordionContent>
                   <ul>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                    <Link to='/admin' className="text-base">
+                    <Link to='/admin' className="text-base w-100 block">
                       List
                     </Link>
                     </li>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                      <Link to='/admin/product/add' className="text-base">
+                      <Link to='/admin/product/add' className="text-base w-100 block">
                         Add
                       </Link>
                     </li>
@@ -70,12 +70,12 @@ function AdminLayout() {
                 <AccordionContent>
                 <ul>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                    <Link to='/admin/category' className="text-base">
+                    <Link to='/admin/category' className="text-base w-100 block">
                       List
                     </Link>
                     </li>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                      <Link to='/admin/category/add' className="text-base">
+                      <Link to='/admin/category/add' className="text-base w-100 block">
                         Add
                       </Link>
                     </li>
@@ -93,12 +93,12 @@ function AdminLayout() {
                 <AccordionContent>
                 <ul>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                    <Link to='/admin/user' className="text-base">
+                    <Link to='/admin/user' className="text-base w-100 block">
                       List
                     </Link>
                     </li>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                      <Link to='/admin/user/add' className="text-base">
+                      <Link to='/admin/user/add' className="text-base w-100 block">
                         Add
                       </Link>
                     </li>
@@ -116,7 +116,7 @@ function AdminLayout() {
                 <AccordionContent>
                 <ul>
                     <li className="hover:bg-[#3f4b57] hover:text-[#b3bfd0]  px-4 py-2">
-                    <Link to='/admin/cart' className="text-base">
+                    <Link to='/admin/cart' className="text-base w-100 block">
                       List
                     </Link>
                     </li>

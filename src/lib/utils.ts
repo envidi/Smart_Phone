@@ -80,6 +80,13 @@ export const changeColorStatus = ( status:any)=>{
       return 'text-yellow-400'
   }
 }
+export const formatShortId = (id:any)=>{
+  const splitId = id.split('');
+  const [ a,...other] = splitId
+  const  shortId = [...a].concat(other.slice(-3)).join('')
+
+  return shortId
+}
 export const EMAIL_ADMIN = 'envidi123@gmail.com'
 export const PASSWORD_ADMIN = '12345678'
 

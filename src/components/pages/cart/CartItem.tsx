@@ -31,8 +31,7 @@ function CartItem({cart}:any) {
       const handleDecrease = (cart:any) =>{
         dispatch(cartAction.decrease(cart))
       }
-      const name_category = categories.find((cate:any)=>{
-        console.log(cate._id)
+      const name_category = categories.find((cate:any)=>{  
         return cate._id === cart.id_cate
       })
       
@@ -47,7 +46,7 @@ function CartItem({cart}:any) {
                 </div>
                 <div className="name-cart-item d-flex flex-col items-start">
                 <span>{cart.name}</span>
-                <Button size="category" variant="outline" className='mt-3'>{name_category?.name} </Button>
+                <Button size="category" variant="outline" className='mt-3'>{name_category?.name || "Uncategory"} </Button>
                 </div>
             </div>
             </TableCell>

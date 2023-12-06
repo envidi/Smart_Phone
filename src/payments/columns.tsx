@@ -16,7 +16,7 @@ import {
 
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import { useSelector } from "react-redux"
-import { changeColorStatus, dateTimeFormat, formatter } from "@/lib/utils"
+import { changeColorStatus, dateTimeFormat, formatShortId, formatter } from "@/lib/utils"
 
 import {
   AlertDialog,
@@ -49,7 +49,7 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("_id")}</div>
+        <div className="capitalize">{formatShortId(row.getValue("_id"))}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -75,16 +75,13 @@ export const columnsProduct =( onRemove:any) => [
         )
       },
       cell: ({ row }:any) =>{
-        
         const formatPrice= formatter.format(row.getValue("price"))
-        
         return <div className="lowercase">{formatPrice}</div>
         },
     },
     {
       accessorKey: "image",
       header: ({ column }:any) => {
-        
         return (
           <Button
             variant="ghost"
@@ -102,14 +99,7 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "desc",
       header: () => <div className="text-right w-[200px]">Description</div>,
       cell: ({ row }:any) => {
-        // const desc = parseFloat(row.getValue("desc"))
         const desc = row.getValue("desc")
-   
-        // Format the amount as a dollar amount
-        // const formatted = new Intl.NumberFormat("en-US", {
-        //   style: "currency",
-        //   currency: "USD",
-        // }).format(desc)
    
         return <div className="text-left font-medium ">{desc}</div>
       },
@@ -119,19 +109,12 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "category_id",
       header: () => <div className="text-right">Category</div>,
       cell: ({ row }:any) => {
-        // const desc = parseFloat(row.getValue("desc"))
         const allCategory = useSelector((state:any)=>state.category.categories)
         const nameCategory = allCategory.find((item:any)=>{
           return item._id == row.getValue("category_id")
         })
         
-        // Format the amount as a dollar amount
-        // const formatted = new Intl.NumberFormat("en-US", {
-        //   style: "currency",
-        //   currency: "USD",
-        // }).format(desc)
-   
-        return <div className="text-center font-medium">{nameCategory?.name}</div>
+        return <div className="text-center font-medium">{nameCategory?.name || 'Uncategory'}</div>
       },
     },
     {
@@ -140,8 +123,6 @@ export const columnsProduct =( onRemove:any) => [
       cell: ({ row }:any) => {
         const payment = row.original
         return (
-         
-        
           <DropdownMenu>
              <AlertDialog>
          
@@ -192,9 +173,10 @@ export const columnsProduct =( onRemove:any) => [
     {
       accessorKey: "_id",
       header: "Id",
-      cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("_id")}</div>
-      ),
+      cell: ({ row }:any) => {
+        const shortId = formatShortId(row.getValue("_id"))
+        return <div className="capitalize">{shortId}</div>
+      },
       enableSorting: false,
       enableHiding: false,
     },
@@ -202,7 +184,7 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "carts",
       header: "Cart Item",
       cell: ({ row }:any) => (
-        <div className="capitalize">Item  { row.getValue("carts").length}</div>
+        <div className="capitalize">Item <span className="lowercase">x</span> { row.getValue("carts").length}</div>
       ),
     },
     {
@@ -276,7 +258,7 @@ export const columnsProduct =( onRemove:any) => [
       },
       cell: ({ row }:any) =>{
         const status = row.getValue("cartStatus")
-        return  <div className={`uppercase ${changeColorStatus(status)} font-semibold`}>{status.toUpperCase()}</div>
+        return <div className={`uppercase ${changeColorStatus(status)} font-semibold`}>{status.toUpperCase()}</div>
         },
     },
    
@@ -284,14 +266,13 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "id_user",
       header: () => <div className="text-right">User</div>,
       cell: ({ row }:any) => {
-        // const desc = parseFloat(row.getValue("desc"))
         const allUser = useSelector((state:any)=>state.user.users)
         const nameUser = allUser.find((item:any)=>{
           return item._id === row.getValue("id_user")
         })
         
    
-        return <div className="text-center font-medium">{nameUser?.username}</div>
+        return <div className="text-center font-medium">{nameUser?.username || "User is deleted"}</div>
       },
     },
     {
@@ -300,8 +281,6 @@ export const columnsProduct =( onRemove:any) => [
       cell: ({ row }:any) => {
         const payment = row.original
         return (
-         
-        
           <DropdownMenu>
              <AlertDialog>
          
@@ -355,7 +334,7 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("_id")}</div>
+        <div className="capitalize">{formatShortId(row.getValue("_id"))}</div>
       ),
       enableSorting: false,
       enableHiding: false,
@@ -458,7 +437,7 @@ export const columnsProduct =( onRemove:any) => [
       accessorKey: "_id",
       header: "Id",
       cell: ({ row }:any) => (
-        <div className="capitalize">{row.getValue("_id")}</div>
+        <div className="capitalize">{formatShortId(row.getValue("_id"))}</div>
       ),
       enableSorting: false,
       enableHiding: false,

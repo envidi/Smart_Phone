@@ -16,8 +16,9 @@ function ProductDetail() {
     queryKey: ['product',param.id],
     queryFn: ()=> getProduct(param.id),
   })
+  console.log(data?.data)
   const relatedProduct = dataProduct.filter((item:any)=>{
-    return item.category_id === data?.data?.category_id && item._id !== data?._id
+    return item.category_id === data?.data?.category_id && item._id !== data?.data?._id
   })
  
   

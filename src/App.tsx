@@ -26,6 +26,7 @@ import ListUser from './components/pages/admin/user/ListUser'
 import AddUser from './components/pages/admin/user/AddUser'
 import ListCart from './components/pages/admin/cart/ListCart'
 import PrivateRoute from './components/PrivateRoute'
+import Product from './components/pages/product/Product'
 
 
 
@@ -81,6 +82,7 @@ function App() {
     <Routes>
       <Route path='/' element={<ClientLayout/>}>
         <Route  index path='/' element={<Main isLoading={isLoading as any} error={error} data={data}/>}/>
+        <Route  path='/product' element={<Product isLoading={isLoading as any} error={error} data={data}/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/bill' element={<Bill/>}/>
         <Route path='/product/:id' element={<ProductDetail/>}/>

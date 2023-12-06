@@ -12,8 +12,7 @@ function ProductDetailItem({data}:any) {
     const { toast } = useToast()
     const [quantityProduct , setQuantityProduct] = useState(1)
     const allCategory = useSelector((state:any)=>state.category.categories)
-    // const { data:dataInside} = data
-    // console.log(dataInside)
+   
     
     const handleIncrease = () =>{
         setQuantityProduct(prev=>{
@@ -62,7 +61,7 @@ function ProductDetailItem({data}:any) {
           <div className="_product-detail-content">
             <p className="_p-name "> {data?.data?.name} </p>
             <div className="category-product-detail">
-                {nameCategory?.name}
+                {nameCategory?.name || "Uncategory"}
               
             </div>
             <div className="_p-price-box mt-3 ">
